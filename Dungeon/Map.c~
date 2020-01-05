@@ -1,0 +1,35 @@
+#include "Map.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+bool mapInit(Map* map, const char* filename)
+{
+
+
+}
+
+void mapUninit(Map* map)
+{
+
+
+}
+
+void mapDisplay(const Map* map)
+{
+
+
+}
+
+bool mapMoreAvatar(Map* map, Avatar* avatar, Action action)
+{
+
+
+}
+
+int mapGemsRemaining(const Map* map)
+{
+
+
+}
+
+

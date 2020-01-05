@@ -1,0 +1,71 @@
+#include "Action.h"
+#include "Tile.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+/*
+* Username: sdmahade
+* Name: Siddhesh Mahadeshwar
+* File Description: This file is responisble for tile-related actions such as returning
+* 		    what each tile on the map represents. Then, based on that case, it 
+*		    decides what to display on the actual map. Lastly, based on both the former 
+*		    cases, it determines whether moving through that tile is possible or not.
+*/
+
+// Takes in a character and returns what that tile represents in the game's language
+Tile tileFromChar(char ch)
+{
+	switch(ch)
+	{
+		case '.': return TileEmpty;
+		case '#': return TileWall;
+		case '-': return TileDoor;
+		case '=': return TileLockedDoor;
+		case 'S': return TileSecretPassage;
+		case '*': return TileGem;
+		case '+': return TileKey;
+		default: return TileInvalid;
+	}
+}
+
+// Takes in a tile and shows that that specific case may look like in the program's language
+void tileDisplay(Tile tile)
+{
+ 	switch(tile)
+	{
+		case 0: printf("%c", '\0');
+		break;
+		case 1: printf(" ");
+		break;
+		case 2: printf("#");
+		break;
+		case 3: printf("-");
+		break;
+		case 4: printf("=");
+		break;
+		case 5: printf("#");
+		break;
+		case 6: printf("*");
+		break;
+		case 7: printf("+");
+		break;
+	
+	}
+}
+
+// Takes in a tile and returns true or false based on if the avatar can go through the tile
+bool tilePassable(Tile tile)
+{
+	switch(tile)
+	{
+		case 0: return 0;
+		case 1: return 1;
+		case 2: return 0;
+		case 3: return 1;
+		case 4: return 0;
+		case 5: return 1;
+		case 6: return 1;
+		case 7: return 1;
+		default: return 0;
+	}
+}
